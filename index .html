@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芦语宣 | 园艺专业 · 个人简历</title>
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --primary-light: #40916c;
+            --primary-dark: #1b4332;
+            --accent: #d4a373;
+            --accent-light: #e9c46a;
+            --accent-dark: #b5835a;
+            --bg: #f8f7f4;
+            --bg-card: #ffffff;
+            --bg-section: #f0ede8;
+            --text: #2c3e50;
+            --text-secondary: #5a6c7d;
+            --text-muted: #8a9aa8;
+            --border: #e2ddd6;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --gradient-hero: linear-gradient(135deg, #1b4332 0%, #2d6a4f 40%, #40916c 70%, #52b788 100%);
+            --gradient-accent: linear-gradient(135deg, #d4a373, #e9c46a);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-xs: 6px;
+            --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            --nav-height: 64px;
+            --max-width: 1100px;
+        }
+
+        [data-theme="dark"] {
+            --primary: #52b788;
+            --primary-light: #74c69d;
+            --primary-dark: #2d6a4f;
+            --accent: #e9c46a;
+            --accent-light: #f4d58d;
+            --accent-dark: #d4a373;
+            --bg: #121212;
+            --bg-card: #1e1e1e;
+            --bg-section: #181818;
+            --text: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #7a7a7a;
+            --border: #333333;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.45);
+            --gradient-hero: linear-gradient(135deg, #0d1f17 0%, #1b4332 40%, #2d6a4f 70%, #40916c 100%);
+            --gradient-accent: linear-gradient(135deg, #b5835a, #d4a373);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            transition: background var(--transition), color var(--transition);
+            min-height: 100vh;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== 导航栏 ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navbar-brand svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .navbar-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .navbar-links a {
+            display: block;
+            padding: 8px 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: color var(--transition), background var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+        .navbar-links a:hover,
+        .navbar-links a:focus-visible {
+            color: var(--primary);
+            background: color-mix(in srgb, var(--primary) 8%, transparent);
+        }
+        .navbar-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .icon-btn:hover,
+        .icon-btn:focus-visible {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: color-mix(in srgb, var(--primary) 6%, transparent);
+            outline: none;
+        }
+        .icon-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .icon-btn .tooltip {
+            position: absolute;
+            bottom: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text);
+            color: var(--bg-card);
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+            z-index: 10;
+        }
+        .icon-btn:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ===== 主容器 ===== */
+        .main-container {
+            margin-top: var(--nav-height);
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px 60px;
+        }
+
+        section {
+            padding: 56px 0 20px;
+            scroll-margin-top: calc(var(--nav-height) + 16px);
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.04em;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 3px;
+            border-radius: 2px;
+            background: var(--gradient-accent);
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* ===== Hero 区 ===== */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 48px 32px;
+            border-radius: var(--radius);
+            background: var(--gradient-hero);
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            margin-top: 24px;
+            box-shadow: var(--shadow-hover);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(233, 196, 106, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 400;
+            margin-bottom: 16px;
+            letter-spacing: 0.03em;
+        }
+        .hero .summary-text {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 500px;
+        }
+        .hero .signature {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+            border-left: 2px solid var(--accent-light);
+            padding-left: 12px;
+        }
+
+        .hero-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .hero-skills .badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            transition: background var(--transition), transform var(--transition);
+            cursor: default;
+            backdrop-filter: blur(8px);
+        }
+        .hero-skills .badge:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: all var(--transition);
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: #ffffff;
+            color: var(--primary-dark);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-copied {
+            background: var(--accent-light) !important;
+            color: #1b4332 !important;
+        }
+
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+        .hero-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+            object-position: center 35%;
+        }
+        .hero-avatar svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.7);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ===== 亮点成果区 ===== */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .highlight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+            transition: all var(--transition);
+            box-shadow: var(--shadow);
+            cursor: default;
+        }
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+        }
+        .highlight-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+        .highlight-number .unit {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+        }
+        .highlight-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            letter-spacing: 0.03em;
+        }
+
+        /* ===== Tabs 通用 ===== */
+        .tabs-container {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+        }
+        .tabs-list {
+            display: flex;
+            gap: 4px;
+            padding: 12px 16px 0;
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            scrollbar-width: thin;
+            background: color-mix(in srgb, var(--bg-section) 60%, var(--bg-card));
+        }
+        .tabs-list::-webkit-scrollbar {
+            height: 4px;
+        }
+        .tabs-list::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 2px;
+        }
+        .tab-btn {
+            padding: 10px 18px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            transition: all var(--transition);
+            white-space: nowrap;
+            font-family: inherit;
+            letter-spacing: 0.03em;
+            position: relative;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+        .tab-btn:hover {
+            color: var(--primary);
+            background: color-mix(in srgb, var(--primary) 4%, transparent);
+        }
+        .tab-btn[aria-selected="true"] {
+            color: var(--primary);
+            font-weight: 600;
+            background: var(--bg-card);
+            border-bottom-color: var(--primary);
+        }
+        .tab-btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: -2px;
+            border-radius: 8px 8px 0 0;
+        }
+        .tab-panel {
+            padding: 24px;
+            display: none;
+            animation: fadeIn 220ms ease;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== 时间线（经历） ===== */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-light), var(--accent-light));
+            border-radius: 1px;
+            opacity: 0.5;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 24px;
+            padding-left: 8px;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid var(--bg-card);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 25%, transparent);
+            z-index: 1;
+        }
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text);
+            letter-spacing: 0.02em;
+        }
+        .timeline-org {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .timeline-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-left: 8px;
+            letter-spacing: 0.04em;
+        }
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-top: 6px;
+            line-height: 1.75;
+        }
+        .timeline-desc ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+        .timeline-desc li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 4px;
+        }
+        .timeline-desc li::before {
+            content: '·';
+            position: absolute;
+            left: 4px;
+            color: var(--accent-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* ===== 项目卡片 ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            transition: all var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            cursor: default;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+        }
+        .project-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text);
+            letter-spacing: 0.02em;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .project-tags .tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            background: color-mix(in srgb, var(--primary) 8%, transparent);
+            color: var(--primary);
+            border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+            letter-spacing: 0.03em;
+        }
+        .project-result {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        .project-link {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color var(--transition);
+        }
+        .project-link:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        /* ===== 技能矩阵 ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: background var(--transition), border-color var(--transition);
+        }
+        .skill-category h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 14px;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-category h3 svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .skill-bar-row {
+            margin-bottom: 12px;
+        }
+        .skill-bar-row:last-child {
+            margin-bottom: 0;
+        }
+        .skill-bar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            font-size: 0.82rem;
+        }
+        .skill-bar-name {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .skill-bar-value {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.78rem;
+        }
+        .skill-bar-track {
+            height: 6px;
+            border-radius: 3px;
+            background: color-mix(in srgb, var(--text-muted) 15%, transparent);
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: var(--gradient-accent);
+            transition: width 800ms cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
+        }
+        .skill-bar-fill.animated {
+            width: var(--skill-width);
+        }
+
+        /* ===== 教育与证书 ===== */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+        }
+        .edu-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+        .edu-school {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        .edu-major {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-top: 2px;
+        }
+        .edu-date {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            margin-top: 2px;
+        }
+        .edu-detail {
+            color: var(--text-secondary);
+            font-size: 0.84rem;
+            margin-top: 8px;
+            line-height: 1.75;
+        }
+        .edu-detail ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .edu-detail li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 3px;
+        }
+        .edu-detail li::before {
+            content: '›';
+            position: absolute;
+            left: 2px;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        .cert-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: color-mix(in srgb, var(--accent) 12%, transparent);
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+            color: var(--accent-dark);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: all var(--transition);
+            cursor: default;
+        }
+        .cert-badge:hover {
+            background: color-mix(in srgb, var(--accent) 20%, transparent);
+            transform: translateY(-2px);
+        }
+        .cert-badge svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* 证书图片展示 */
+        .certificate-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .certificate-item {
+            width: 200px;
+            max-width: 100%;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+        }
+        .certificate-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+        }
+        .certificate-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background: #fafafa;
+        }
+        .certificate-caption {
+            padding: 8px 12px;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            text-align: center;
+            letter-spacing: 0.03em;
+            background: color-mix(in srgb, var(--bg-card) 80%, var(--bg-section));
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            margin-top: 20px;
+        }
+        .footer .heart {
+            color: var(--accent-dark);
+        }
+
+        /* ===== 返回顶部按钮 ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all var(--transition);
+            z-index: 900;
+            font-size: 1.2rem;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ===== Toast 提示 ===== */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--text);
+            color: var(--bg-card);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1100;
+            white-space: nowrap;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 12px;
+                gap: 6px;
+            }
+            .navbar-brand {
+                font-size: 1rem;
+            }
+            .navbar-brand svg {
+                width: 20px;
+                height: 20px;
+            }
+            .navbar-links a {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+            .navbar-actions {
+                gap: 4px;
+            }
+            .icon-btn {
+                width: 34px;
+                height: 34px;
+                border-radius: 8px;
+                font-size: 0.9rem;
+            }
+            .icon-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+            .icon-btn .tooltip {
+                display: none;
+            }
+
+            .main-container {
+                padding: 0 12px 40px;
+            }
+            section {
+                padding: 40px 0 16px;
+            }
+            .section-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 28px 20px;
+                gap: 20px;
+                text-align: center;
+                margin-top: 12px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .subtitle {
+                font-size: 0.95rem;
+            }
+            .hero .summary-text {
+                font-size: 0.85rem;
+                max-width: 100%;
+            }
+            .hero .signature {
+                border-left: none;
+                padding-left: 0;
+                text-align: center;
+            }
+            .hero-skills {
+                justify-content: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-visual {
+                display: none;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .highlight-card {
+                padding: 14px;
+            }
+            .highlight-number {
+                font-size: 1.5rem;
+            }
+
+            .tabs-list {
+                padding: 8px 10px 0;
+                gap: 2px;
+            }
+            .tab-btn {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
+            .tab-panel {
+                padding: 16px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .edu-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .timeline {
+                padding-left: 18px;
+            }
+            .timeline-dot {
+                left: -18px;
+                width: 10px;
+                height: 10px;
+            }
+            .timeline::before {
+                left: 4px;
+            }
+
+            .back-to-top {
+                bottom: 16px;
+                right: 16px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .certificate-item {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-links a {
+                padding: 5px 7px;
+                font-size: 0.7rem;
+            }
+            .navbar-brand span {
+                font-size: 0.85rem;
+            }
+            .hero {
+                padding: 20px 14px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero-actions .btn {
+                padding: 8px 14px;
+                font-size: 0.78rem;
+            }
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+            .certificate-item {
+                width: 100%;
+            }
+        }
+
+        /* ===== 打印样式 ===== */
+        @media print {
+            :root {
+                --bg: #ffffff;
+                --bg-card: #ffffff;
+                --bg-section: #f5f5f5;
+                --text: #222;
+                --text-secondary: #444;
+                --text-muted: #666;
+                --border: #ddd;
+                --primary: #2d6a4f;
+                --primary-light: #40916c;
+                --accent: #b5835a;
+                --accent-dark: #8b5e3c;
+                --shadow: none;
+                --shadow-hover: none;
+                --gradient-hero: none;
+            }
+            .navbar,
+            .back-to-top,
+            .toast,
+            .icon-btn {
+                display: none !important;
+            }
+            .navbar-actions {
+                display: none !important;
+            }
+            .main-container {
+                margin-top: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            section {
+                padding: 20px 0;
+                scroll-margin-top: 0;
+            }
+            .hero {
+                background: #f0f0f0 !important;
+                color: #222 !important;
+                box-shadow: none;
+                padding: 24px;
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+                color: #222;
+            }
+            .hero .summary-text,
+            .hero .subtitle,
+            .hero .signature {
+                color: #444;
+                opacity: 1;
+            }
+            .hero-skills .badge {
+                background: #eee;
+                border-color: #ccc;
+                color: #333;
+                backdrop-filter: none;
+            }
+            .hero-actions .btn {
+                display: none;
+            }
+            .hero-visual {
+                display: none;
+            }
+            .hero::before,
+            .hero::after {
+                display: none;
+            }
+            .tab-panel {
+                display: block !important;
+                animation: none;
+            }
+            .tabs-list {
+                display: none !important;
+            }
+            .tabs-container {
+                border: none;
+                box-shadow: none;
+                background: #fff;
+            }
+            .tab-panel {
+                padding: 8px 0;
+            }
+            .highlight-card,
+            .project-card,
+            .skill-category,
+            .edu-card,
+            .certificate-item {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .highlight-card:hover,
+            .project-card:hover,
+            .edu-card:hover,
+            .certificate-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .skill-bar-fill {
+                width: var(--skill-width) !important;
+                animation: none;
+                transition: none;
+            }
+            .footer {
+                border-top: 1px solid #ddd;
+                color: #666;
+            }
+            .hero-badge {
+                background: #e0e0e0;
+                color: #333;
+                border-color: #ccc;
+                backdrop-filter: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
+        <a class="navbar-brand" href="#hero" aria-label="返回首页">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 7 3 10 3 14a9 9 0 0 0 18 0c0-4-4-7-9-12z"/><path d="M12 22V10"/><path d="M8 14c1-1 2-2 4-2s3 1 4 2"/></svg>
+            <span>芦语宣</span>
+        </a>
+        <ul class="navbar-links" id="navLinks" role="list">
+            <li role="listitem"><a href="#highlights" data-nav>亮点</a></li>
+            <li role="listitem"><a href="#experience" data-nav>经历</a></li>
+            <li role="listitem"><a href="#projects" data-nav>实践</a></li>
+            <li role="listitem"><a href="#skills" data-nav>技能</a></li>
+            <li role="listitem"><a href="#education" data-nav>教育</a></li>
+        </ul>
+        <div class="navbar-actions">
+            <button class="icon-btn" id="themeToggle" aria-label="切换深浅色模式" title="切换深浅色模式">
+                <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <span class="tooltip">切换主题</span>
+            </button>
+            <button class="icon-btn" id="printBtn" aria-label="打印简历" title="打印简历">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+                <span class="tooltip">打印</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Toast 提示 -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- 主容器 -->
+    <main class="main-container" id="mainContainer">
+        <!-- 所有内容由 JS 渲染 -->
+    </main>
+
+    <!-- 返回顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script>
+        (function() {
+            // ===== 简历数据 =====
+            const resume = {
+                personal: {
+                    name: '芦语宣',
+                    phone: '18358558044',
+                    emailLocal: '3476366939',
+                    emailDomain: 'qq.com',
+                    location: '浙江省绍兴市',
+                    birth: '2007年生',
+                    politicalStatus: '共青团员',
+                    signature: '道阻且长，行则将至',
+                    avatar: 'touxiang.jpg'
+                },
+                hero: {
+                    badge: '园艺专业 · 2026级本科新生',
+                    subtitle: '园艺栽培 · 绿植养护 · 园林景观',
+                    summary: '对植物栽培、园林养护与景观设计抱有高度热情，具备扎实的基础养护知识与丰富的自主实践经验。性格踏实沉稳、细心负责，动手能力强，善于在实操中观察总结、提炼方法，持续深耕园艺专业领域。',
+                    skills: ['园艺栽培', '植物养护', '景观搭配', '病虫害防治', '团队协作', '信息检索', '组织管理', '自主学习'],
+                    highlights: [
+                        { number: '30%', label: '学业成绩稳定年级前' },
+                        { number: '10+', label: '独立养护绿植种类' },
+                        { number: '90%', label: '植株存活率达' },
+                        { number: '10+', label: '组织策划班级活动次数' },
+                        { number: '2', label: '获得专业相关证书' },
+                    ],
+                },
+                experiences: {
+                    tabs: [
+                        { id: 'exp-campus', label: '校园经历' },
+                        { id: 'exp-university', label: '大学经历' },
+                        { id: 'exp-practice', label: '实践经历' },
+                    ],
+                    content: {
+                        'exp-campus': {
+                            title: '城南中学 · 副班长 & 物理课代表',
+                            org: '城南中学',
+                            date: '2023.09 — 2026.06',
+                            items: [
+                                '担任副班长，协助班主任统筹班级日常管理事务，组织策划班级活动10余次，协调师生沟通',
+                                '担任物理课代表，负责作业收发、学情反馈与课后辅导，学业成绩稳定在年级前30%',
+                                '在班级管理与学科服务中积累了丰富的协调与组织经验'
+                            ]
+                        },
+                        'exp-university': {
+                            title: '丽水学院 · 园艺专业（本科在读）',
+                            org: '丽水学院',
+                            date: '2026.09 — 至今',
+                            items: [
+                                '主修课程：植物学、植物生理学、土壤与肥料学、园艺作物栽培学、园林植物景观设计、植物保护学等',
+                                '入学即确立专业发展方向，聚焦园艺栽培、绿植养护与园林景观管理领域',
+                                '系统构建专业理论与实践技能体系，持续关注行业动态与养护新技术'
+                            ]
+                        },
+                        'exp-practice': {
+                            title: '绿植养护与景观设计自主实践',
+                            org: '个人实践',
+                            date: '2024.09 — 至今',
+                            items: [
+                                '独立养护各类绿植10余种，涵盖浇水频次管理、施肥配比、病虫害识别与基础防治全流程',
+                                '根据不同场景（室内/阳台/庭院）进行绿植组合设计与空间布局实践',
+                                '通过园艺类公众号、论坛及学术平台持续自学，掌握园艺作物生长周期管理基础知识'
+                            ]
+                        },
+                    }
+                },
+                projects: {
+                    tabs: [
+                        { id: 'proj-care', label: '绿植养护实践' },
+                        { id: 'proj-design', label: '植物景观搭配' },
+                        { id: 'proj-management', label: '班级管理项目' },
+                    ],
+                    content: {
+                        'proj-care': {
+                            name: '多品种绿植独立养护项目',
+                            tags: ['植物养护', '病虫害防治', '施肥管理', '浇水管理'],
+                            result: '独立养护各类绿植10余种，植株存活率达90%以上。掌握了常见观赏植物的浇水频次、施肥配比及病虫害识别防治全流程，形成了一套个人养护记录与观察方法论。',
+                            link: ''
+                        },
+                        'proj-design': {
+                            name: '多场景植物景观搭配设计',
+                            tags: ['景观搭配', '空间布局', '植物组合'],
+                            result: '根据室内、阳台、庭院等不同场景特点，进行绿植组合设计与空间布局实践。熟悉植物景观搭配原则，能够结合光照、湿度等环境因素进行合理的植物配置。',
+                            link: ''
+                        },
+                        'proj-management': {
+                            name: '班级活动组织与协调项目',
+                            tags: ['活动策划', '团队协作', '沟通协调', '组织管理'],
+                            result: '担任副班长期间，组织策划班级活动10余次，涵盖文体活动、主题班会、志愿服务等多种类型。在师生沟通协调中锻炼了较强的组织执行能力和团队协作意识。',
+                            link: ''
+                        },
+                    }
+                },
+                skills: {
+                    categories: [{
+                        name: '园艺专业能力',
+                        items: [
+                            { name: '植物养护（浇水/施肥/病虫害防治）', level: 90 },
+                            { name: '植物景观搭配与空间布局', level: 75 },
+                            { name: '生长周期管理与环境调控', level: 70 },
+                            { name: '园艺作物栽培基础', level: 65 },
+                        ]
+                    }, {
+                        name: '通用技能',
+                        items: [
+                            { name: '信息检索与自主学习', level: 85 },
+                            { name: '沟通表达与团队协作', level: 80 },
+                            { name: '组织管理与活动策划', level: 75 },
+                            { name: '观察总结与实操记录', level: 78 },
+                        ]
+                    }]
+                },
+                education: [{
+                    school: '城南中学',
+                    major: '高中',
+                    date: '2023.09 — 2026.06',
+                    details: [
+                        '担任副班长，协助班主任统筹班级日常管理事务，组织策划班级活动10余次',
+                        '担任物理课代表，负责作业收发、学情反馈与课后辅导',
+                        '在校期间学业成绩稳定在年级前30%'
+                    ]
+                }, {
+                    school: '丽水学院',
+                    major: '园艺专业（本科在读）',
+                    date: '2026.09 — 至今',
+                    details: [
+                        '主修课程：植物学、植物生理学、土壤与肥料学、园艺作物栽培学、园林植物景观设计、植物保护学等',
+                        '入学即确立专业发展方向，聚焦园艺栽培、绿植养护与园林景观管理领域',
+                        '系统构建专业理论与实践技能体系'
+                    ]
+                }],
+                certificates: [
+                    { name: '机动车驾驶证 C2', image: '' },
+                    { name: '人工智能训练师证书', image: '' },
+                ],
+                certificatesImages: ['zhengshu.jpg', 'gaoji.jpg'], // 修改：新增gaoji.jpg
+                selfEvaluation: '园艺专业2026级新生，对植物栽培、园林养护与景观设计抱有高度热情，具备扎实的基础养护知识与丰富的自主实践经验。性格踏实沉稳、细心负责，动手能力强，能够快速适应园艺相关实操、记录整理与养护管理类工作。学习主动性强，善于观察总结，具备从实践中提炼方法论的能力。期望在专业学习与实践中持续深耕，将个人兴趣转化为专业能力，为团队创造价值。',
+                footer: {
+                    copyright: '© 2026 芦语宣 · 个人简历',
+                    updated: '更新时间：2026年8月',
+                }
+            };
+
+            // ===== DOM 引用 =====
+            const mainContainer = document.getElementById('mainContainer');
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            const toast = document.getElementById('toast');
+            const themeToggle = document.getElementById('themeToggle');
+            const printBtn = document.getElementById('printBtn');
+            const iconSun = document.getElementById('iconSun');
+            const iconMoon = document.getElementById('iconMoon');
+            const navLinks = document.getElementById('navLinks');
+
+            // ===== 工具函数 =====
+            function createEl(tag, className, textContent) {
+                const el = document.createElement(tag);
+                if (className) el.className = className;
+                if (textContent !== undefined) el.textContent = textContent;
+                return el;
+            }
+
+            function createSVG(pathData, viewBox = '0 0 24 24', extra = '') {
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('viewBox', viewBox);
+                svg.setAttribute('fill', 'none');
+                svg.setAttribute('stroke', 'currentColor');
+                svg.setAttribute('stroke-width', '2');
+                svg.setAttribute('stroke-linecap', 'round');
+                svg.setAttribute('stroke-linejoin', 'round');
+                if (typeof pathData === 'string') {
+                    svg.innerHTML = pathData;
+                } else if (Array.isArray(pathData)) {
+                    pathData.forEach(p => {
+                        const el = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        el.setAttribute('d', p);
+                        svg.appendChild(el);
+                    });
+                }
+                return svg;
+            }
+
+            function getFullEmail() {
+                return resume.personal.emailLocal + '@' + resume.personal.emailDomain;
+            }
+
+            function showToast(message, duration = 2000) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(toast._timeout);
+                toast._timeout = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, duration);
+            }
+
+            function copyToClipboard(text) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    return navigator.clipboard.writeText(text).then(() => true).catch(() => false);
+                }
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    return Promise.resolve(true);
+                } catch (e) {
+                    return Promise.resolve(false);
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            }
+
+            // ===== 主题管理 =====
+            function getPreferredTheme() {
+                const saved = localStorage.getItem('theme');
+                if (saved) return saved;
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    iconSun.style.display = 'none';
+                    iconMoon.style.display = 'block';
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    iconSun.style.display = 'block';
+                    iconMoon.style.display = 'none';
+                }
+                localStorage.setItem('theme', theme);
+            }
+
+            function toggleTheme() {
+                const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+            }
+
+            // ===== 渲染 Hero 区 =====
+            function renderHero() {
+                const section = createEl('section', null);
+                section.id = 'hero';
+                section.setAttribute('aria-label', '个人简介');
+
+                const hero = createEl('div', 'hero');
+
+                const content = createEl('div', 'hero-content');
+                const badge = createEl('span', 'hero-badge', resume.hero.badge);
+                const h1 = createEl('h1', null, resume.personal.name);
+                const subtitle = createEl('div', 'subtitle', resume.hero.subtitle);
+                const summary = createEl('p', 'summary-text', resume.hero.summary);
+                const signature = createEl('div', 'signature', '「' + resume.personal.signature + '」');
+
+                const skillsContainer = createEl('div', 'hero-skills');
+                resume.hero.skills.forEach(skill => {
+                    skillsContainer.appendChild(createEl('span', 'badge', skill));
+                });
+
+                const actions = createEl('div', 'hero-actions');
+                const phoneBtn = createEl('a', 'btn btn-primary');
+                phoneBtn.href = 'tel:' + resume.personal.phone;
+                phoneBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 电话联系';
+                actions.appendChild(phoneBtn);
+
+                const emailBtn = createEl('button', 'btn btn-outline');
+                emailBtn.id = 'copyEmailBtn';
+                emailBtn.type = 'button';
+                emailBtn.setAttribute('aria-label', '复制邮箱地址');
+                emailBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> 复制邮箱';
+                emailBtn.addEventListener('click', function() {
+                    const email = getFullEmail();
+                    copyToClipboard(email).then(success => {
+                        if (success) {
+                            const origText = emailBtn.innerHTML;
+                            emailBtn.innerHTML =
+                                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 已复制!';
+                            emailBtn.classList.add('btn-copied');
+                            showToast('📋 邮箱已复制到剪贴板');
+                            setTimeout(() => {
+                                emailBtn.innerHTML = origText;
+                                emailBtn.classList.remove('btn-copied');
+                            }, 2000);
+                        } else {
+                            showToast('❌ 复制失败，请手动复制');
+                        }
+                    });
+                });
+                actions.appendChild(emailBtn);
+
+                content.appendChild(badge);
+                content.appendChild(h1);
+                content.appendChild(subtitle);
+                content.appendChild(summary);
+                content.appendChild(signature);
+                content.appendChild(skillsContainer);
+                content.appendChild(actions);
+
+                const visual = createEl('div', 'hero-visual');
+                const avatar = createEl('div', 'hero-avatar');
+                if (resume.personal.avatar) {
+                    const img = createEl('img');
+                    img.src = resume.personal.avatar;
+                    img.alt = resume.personal.name + '的头像';
+                    img.onerror = function() {
+                        avatar.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 7 3 10 3 14a9 9 0 0 0 18 0c0-4-4-7-9-12z"/><path d="M12 22V10"/><path d="M8 14c1-1 2-2 4-2s3 1 4 2"/><path d="M5 10c2-1 3-2 4-3M19 10c-2-1-3-2-4-3"/></svg>';
+                    };
+                    avatar.appendChild(img);
+                } else {
+                    avatar.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 7 3 10 3 14a9 9 0 0 0 18 0c0-4-4-7-9-12z"/><path d="M12 22V10"/><path d="M8 14c1-1 2-2 4-2s3 1 4 2"/><path d="M5 10c2-1 3-2 4-3M19 10c-2-1-3-2-4-3"/></svg>';
+                }
+                visual.appendChild(avatar);
+
+                hero.appendChild(content);
+                hero.appendChild(visual);
+                section.appendChild(hero);
+                mainContainer.appendChild(section);
+            }
+
+            // ===== 渲染亮点成果区 =====
+            function renderHighlights() {
+                const section = createEl('section', null);
+                section.id = 'highlights';
+                section.setAttribute('aria-label', '亮点成果');
+
+                const header = createEl('div', 'section-header');
+                header.appendChild(createEl('h2', null, '亮点成果'));
+                header.appendChild(createEl('p', null, '可量化的关键成绩'));
+                section.appendChild(header);
+
+                const grid = createEl('div', 'highlights-grid');
+                resume.hero.highlights.forEach(h => {
+                    const card = createEl('div', 'highlight-card');
+                    const numSpan = createEl('span', 'highlight-number', h.number);
+                    const labelSpan = createEl('div', 'highlight-label', h.label);
+                    card.appendChild(numSpan);
+                    card.appendChild(labelSpan);
+                    grid.appendChild(card);
+                });
+                section.appendChild(grid);
+                mainContainer.appendChild(section);
+            }
+
+            // ===== 渲染经历 Tabs =====
+            function renderExperience() {
+                const section = createEl('section', null);
+                section.id = 'experience';
+                section.setAttribute('aria-label', '经历');
+
+                const header = createEl('div', 'section-header');
+                header.appendChild(createEl('h2', null, '个人经历'));
+                header.appendChild(createEl('p', null, '成长轨迹与关键角色'));
+                section.appendChild(header);
+
+                const tabsContainer = createEl('div', 'tabs-container');
+                tabsContainer.setAttribute('role', 'tablist');
+                tabsContainer.setAttribute('aria-label', '经历分类');
+
+                const tabsList = createEl('div', 'tabs-list');
+                tabsList.id = 'expTabsList';
+
+                resume.experiences.tabs.forEach((tab, index) => {
+                    const btn = createEl('button', 'tab-btn');
+                    btn.id = 'exp-tab-' + tab.id;
+                    btn.setAttribute('role', 'tab');
+                    btn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                    btn.setAttribute('aria-controls', 'exp-panel-' + tab.id);
+                    btn.setAttribute('tabindex', index === 0 ? '0' : '-1');
+                    btn.textContent = tab.label;
+                    btn.dataset.tabId = tab.id;
+                    btn.dataset.tabIndex = index;
+                    btn.addEventListener('click', () => switchExpTab(index));
+                    btn.addEventListener('keydown', (e) => handleTabKeydown(e, index, 'exp', resume.experiences
+                        .tabs.length));
+                    tabsList.appendChild(btn);
+                });
+
+                tabsContainer.appendChild(tabsList);
+
+                resume.experiences.tabs.forEach((tab, index) => {
+                    const panel = createEl('div', 'tab-panel' + (index === 0 ? ' active' : ''));
+                    panel.id = 'exp-panel-' + tab.id;
+                    panel.setAttribute('role', 'tabpanel');
+                    panel.setAttribute('aria-labelledby', 'exp-tab-' + tab.id);
+                    panel.setAttribute('tabindex', '0');
+
+                    const data = resume.experiences.content[tab.id];
+                    if (data) {
+                        const timeline = createEl('div', 'timeline');
+                        const item = createEl('div', 'timeline-item');
+                        const dot = createEl('div', 'timeline-dot');
+                        const title = createEl('div', 'timeline-title', data.title);
+                        const metaLine = createEl('div', null);
+                        const orgSpan = createEl('span', 'timeline-org', data.org);
+                        const dateSpan = createEl('span', 'timeline-date', data.date);
+                        metaLine.appendChild(orgSpan);
+                        metaLine.appendChild(dateSpan);
+
+                        const desc = createEl('div', 'timeline-desc');
+                        if (data.items && data.items.length) {
+                            const ul = createEl('ul');
+                            data.items.forEach(li => {
+                                ul.appendChild(createEl('li', null, li));
+                            });
+                            desc.appendChild(ul);
+                        }
+
+                        item.appendChild(dot);
+                        item.appendChild(title);
+                        item.appendChild(metaLine);
+                        item.appendChild(desc);
+                        timeline.appendChild(item);
+                        panel.appendChild(timeline);
+                    }
+                    tabsContainer.appendChild(panel);
+                });
+
+                section.appendChild(tabsContainer);
+                mainContainer.appendChild(section);
+            }
+
+            function switchExpTab(index) {
+                const tabs = document.querySelectorAll('#expTabsList .tab-btn');
+                const panels = document.querySelectorAll('[id^="exp-panel-"]');
+                tabs.forEach((btn, i) => {
+                    const selected = i === index;
+                    btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+                    btn.setAttribute('tabindex', selected ? '0' : '-1');
+                    btn.classList.toggle('active', selected);
+                    if (selected) btn.focus();
+                });
+                panels.forEach((panel, i) => {
+                    panel.classList.toggle('active', i === index);
+                });
+            }
+
+            function switchProjTab(index) {
+                const tabs = document.querySelectorAll('#projTabsList .tab-btn');
+                const panels = document.querySelectorAll('[id^="proj-panel-"]');
+                tabs.forEach((btn, i) => {
+                    const selected = i === index;
+                    btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+                    btn.setAttribute('tabindex', selected ? '0' : '-1');
+                    btn.classList.toggle('active', selected);
+                    if (selected) btn.focus();
+                });
+                panels.forEach((panel, i) => {
+                    panel.classList.toggle('active', i === index);
+                });
+            }
+
+            function handleTabKeydown(e, currentIndex, prefix, total) {
+                let newIndex = null;
+                switch (e.key) {
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        newIndex = (currentIndex + 1) % total;
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        newIndex = (currentIndex - 1 + total) % total;
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        newIndex = 0;
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        newIndex = total - 1;
+                        break;
+                    case 'Enter':
+                    case ' ':
+                        e.preventDefault();
+                        if (prefix === 'exp') switchExpTab(currentIndex);
+                        else switchProjTab(currentIndex);
+                        return;
+                }
+                if (newIndex !== null) {
+                    if (prefix === 'exp') switchExpTab(newIndex);
+                    else switchProjTab(newIndex);
+                }
+            }
+
+            // ===== 渲染项目 Tabs =====
+            function renderProjects() {
+                const section = createEl('section', null);
+                section.id = 'projects';
+                section.setAttribute('aria-label', '实践项目');
+
+                const header = createEl('div', 'section-header');
+                header.appendChild(createEl('h2', null, '实践项目'));
+                header.appendChild(createEl('p', null, '专业实践与综合能力展示'));
+                section.appendChild(header);
+
+                const tabsContainer = createEl('div', 'tabs-container');
+                tabsContainer.setAttribute('role', 'tablist');
+                tabsContainer.setAttribute('aria-label', '项目分类');
+
+                const tabsList = createEl('div', 'tabs-list');
+                tabsList.id = 'projTabsList';
+
+                resume.projects.tabs.forEach((tab, index) => {
+                    const btn = createEl('button', 'tab-btn');
+                    btn.id = 'proj-tab-' + tab.id;
+                    btn.setAttribute('role', 'tab');
+                    btn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                    btn.setAttribute('aria-controls', 'proj-panel-' + tab.id);
+                    btn.setAttribute('tabindex', index === 0 ? '0' : '-1');
+                    btn.textContent = tab.label;
+                    btn.dataset.tabId = tab.id;
+                    btn.dataset.tabIndex = index;
+                    btn.addEventListener('click', () => switchProjTab(index));
+                    btn.addEventListener('keydown', (e) => handleTabKeydown(e, index, 'proj', resume.projects.tabs
+                        .length));
+                    tabsList.appendChild(btn);
+                });
+
+                tabsContainer.appendChild(tabsList);
+
+                resume.projects.tabs.forEach((tab, index) => {
+                    const panel = createEl('div', 'tab-panel' + (index === 0 ? ' active' : ''));
+                    panel.id = 'proj-panel-' + tab.id;
+                    panel.setAttribute('role', 'tabpanel');
+                    panel.setAttribute('aria-labelledby', 'proj-tab-' + tab.id);
+                    panel.setAttribute('tabindex', '0');
+
+                    const data = resume.projects.content[tab.id];
+                    if (data) {
+                        const grid = createEl('div', 'projects-grid');
+                        const card = createEl('div', 'project-card');
+                        card.appendChild(createEl('div', 'project-name', data.name));
+
+                        const tags = createEl('div', 'project-tags');
+                        data.tags.forEach(tag => {
+                            tags.appendChild(createEl('span', 'tag', tag));
+                        });
+                        card.appendChild(tags);
+
+                        card.appendChild(createEl('div', 'project-result', data.result));
+
+                        if (data.link) {
+                            const link = createEl('a', 'project-link', '查看详情 →');
+                            link.href = data.link;
+                            link.target = '_blank';
+                            link.rel = 'noopener noreferrer';
+                            card.appendChild(link);
+                        }
+                        grid.appendChild(card);
+                        panel.appendChild(grid);
+                    }
+                    tabsContainer.appendChild(panel);
+                });
+
+                section.appendChild(tabsContainer);
+                mainContainer.appendChild(section);
+            }
+
+            // ===== 渲染技能矩阵 =====
+            function renderSkills() {
+                const section = createEl('section', null);
+                section.id = 'skills';
+                section.setAttribute('aria-label', '技能矩阵');
+
+                const header = createEl('div', 'section-header');
+                header.appendChild(createEl('h2', null, '技能矩阵'));
+                header.appendChild(createEl('p', null, '专业能力与通用素养'));
+                section.appendChild(header);
+
+                const grid = createEl('div', 'skills-grid');
+                resume.skills.categories.forEach(cat => {
+                    const catCard = createEl('div', 'skill-category');
+                    const h3 = createEl('h3', null, cat.name);
+                    const leafSvg =
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>';
+                    h3.innerHTML = leafSvg + ' ' + cat.name;
+                    catCard.appendChild(h3);
+
+                    cat.items.forEach(item => {
+                        const row = createEl('div', 'skill-bar-row');
+                        const barHeader = createEl('div', 'skill-bar-header');
+                        barHeader.appendChild(createEl('span', 'skill-bar-name', item.name));
+                        barHeader.appendChild(createEl('span', 'skill-bar-value', item.level + '%'));
+                        const track = createEl('div', 'skill-bar-track');
+                        const fill = createEl('div', 'skill-bar-fill');
+                        fill.style.setProperty('--skill-width', item.level + '%');
+                        fill.dataset.targetWidth = item.level;
+                        track.appendChild(fill);
+                        row.appendChild(barHeader);
+                        row.appendChild(track);
+                        catCard.appendChild(row);
+                    });
+                    grid.appendChild(catCard);
+                });
+                section.appendChild(grid);
+                mainContainer.appendChild(section);
+
+                animateSkillBars();
+            }
+
+            function animateSkillBars() {
+                const bars = document.querySelectorAll('.skill-bar-fill');
+                if (!bars.length) return;
+
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const el = entry.target;
+                                el.classList.add('animated');
+                                observer.unobserve(el);
+                            }
+                        });
+                    }, { threshold: 0.3 });
+                    bars.forEach(bar => observer.observe(bar));
+                } else {
+                    bars.forEach(bar => bar.classList.add('animated'));
+                }
+            }
+
+            // ===== 渲染教育与证书 =====
+            function renderEducation() {
+                const section = createEl('section', null);
+                section.id = 'education';
+                section.setAttribute('aria-label', '教育与证书');
+
+                const header = createEl('div', 'section-header');
+                header.appendChild(createEl('h2', null, '教育与证书'));
+                header.appendChild(createEl('p', null, '教育背景与专业资质'));
+                section.appendChild(header);
+
+                const grid = createEl('div', 'edu-grid');
+                resume.education.forEach(edu => {
+                    const card = createEl('div', 'edu-card');
+                    card.appendChild(createEl('div', 'edu-school', edu.school));
+                    card.appendChild(createEl('div', 'edu-major', edu.major));
+                    card.appendChild(createEl('div', 'edu-date', edu.date));
+
+                    const details = createEl('div', 'edu-detail');
+                    if (edu.details && edu.details.length) {
+                        const ul = createEl('ul');
+                        edu.details.forEach(d => {
+                            ul.appendChild(createEl('li', null, d));
+                        });
+                        details.appendChild(ul);
+                    }
+                    card.appendChild(details);
+                    grid.appendChild(card);
+                });
+                section.appendChild(grid);
+
+                if (resume.certificates && resume.certificates.length) {
+                    const certContainer = createEl('div', 'cert-badges');
+                    resume.certificates.forEach(cert => {
+                        const badge = createEl('span', 'cert-badge');
+                        const certSvg =
+                            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>';
+                        badge.innerHTML = certSvg + ' ' + cert.name;
+                        certContainer.appendChild(badge);
+                    });
+                    section.appendChild(certContainer);
+                }
+
+                // 证书图片展示
+                if (resume.certificatesImages && resume.certificatesImages.length) {
+                    const gallery = createEl('div', 'certificate-gallery');
+                    resume.certificatesImages.forEach(imageSrc => {
+                        const item = createEl('div', 'certificate-item');
+                        const img = createEl('img');
+                        img.src = imageSrc;
+                        img.alt = '证书展示';
+                        img.loading = 'lazy';
+                        // 根据文件名动态设置描述
+                        let captionText = '个人证书';
+                        if (imageSrc.includes('zhengshu')) {
+                            captionText = '人工智能训练师（初级）';
+                        } else if (imageSrc.includes('gaoji')) {
+                            captionText = '人工智能训练师（高级）';
+                        }
+                        const caption = createEl('div', 'certificate-caption', captionText);
+                        item.appendChild(img);
+                        item.appendChild(caption);
+                        gallery.appendChild(item);
+                    });
+                    section.appendChild(gallery);
+                }
+
+                mainContainer.appendChild(section);
+            }
+
+            // ===== 渲染页脚 =====
+            function renderFooter() {
+                const footer = createEl('footer', 'footer');
+                const copyright = createEl('div', null, resume.footer.copyright);
+                const updated = createEl('div', null, resume.footer.updated);
+                const heart = createEl('span', 'heart', ' ♥ ');
+                copyright.appendChild(heart);
+                footer.appendChild(copyright);
+                footer.appendChild(updated);
+                mainContainer.appendChild(footer);
+            }
+
+            // ===== 导航高亮 =====
+            function initNavHighlight() {
+                const sections = ['highlights', 'experience', 'projects', 'skills', 'education'];
+                const navAnchors = document.querySelectorAll('#navLinks a[data-nav]');
+
+                function updateNav() {
+                    const scrollY = window.scrollY + 100;
+                    let currentSection = '';
+                    sections.forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el && el.offsetTop <= scrollY) {
+                            currentSection = id;
+                        }
+                    });
+                    navAnchors.forEach(a => {
+                        const href = a.getAttribute('href').replace('#', '');
+                        a.classList.toggle('active', href === currentSection);
+                    });
+                }
+                window.addEventListener('scroll', updateNav, { passive: true });
+                updateNav();
+            }
+
+            // ===== 平滑滚动 =====
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            const navH = document.getElementById('navbar').offsetHeight;
+                            const targetPos = target.getBoundingClientRect().top + window.scrollY -
+                                navH - 12;
+                            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+
+            // ===== 返回顶部 =====
+            function initBackToTop() {
+                window.addEventListener('scroll', () => {
+                    backToTop.classList.toggle('visible', window.scrollY > 300);
+                    navbar.classList.toggle('scrolled', window.scrollY > 10);
+                }, { passive: true });
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // ===== 打印 =====
+            function initPrint() {
+                printBtn.addEventListener('click', () => {
+                    window.print();
+                });
+            }
+
+            // ===== 键盘快捷键 =====
+            function initKeyboardShortcuts() {
+                document.addEventListener('keydown', (e) => {
+                    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                        return;
+                    }
+                });
+            }
+
+            // ===== 初始化所有 =====
+            function init() {
+                applyTheme(getPreferredTheme());
+                themeToggle.addEventListener('click', toggleTheme);
+
+                renderHero();
+                renderHighlights();
+                renderExperience();
+                renderProjects();
+                renderSkills();
+                renderEducation();
+                renderFooter();
+
+                initNavHighlight();
+                initSmoothScroll();
+                initBackToTop();
+                initPrint();
+
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    if (!localStorage.getItem('theme')) {
+                        applyTheme(e.matches ? 'dark' : 'light');
+                    }
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
